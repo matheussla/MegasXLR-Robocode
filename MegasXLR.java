@@ -43,21 +43,20 @@ public class MegasXLR extends RateControlRobot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 		
-			setTurnRate(5);
-			setGunRotationRate(2);			
+		setTurnRate(5);
+		setGunRotationRate(2);			
 
-			if(getEnergy() >= 70){
+		if(getEnergy() >= 70){
 			fire(3);
-			}
+		}
 			
-			if(getEnergy() >= 50){
+		if(getEnergy() >= 50){
 			fire(2);
-			}
+		}
 			
-			else{
-			fire(1);
-			
-			}
+		else{
+			fire(1);	
+		}
 		
 	}
 
@@ -85,15 +84,15 @@ public class MegasXLR extends RateControlRobot
 	
 	public void onHitRobot(HitRobotEvent e) {
       		setGunRotationRate(0);
-			if (e.getBearing() > -10 && e.getBearing() < 10) {
-				for(int i = 0; i<5; i++){
+		if (e.getBearing() > -10 && e.getBearing() < 10) {
+			for(int i = 0; i<5; i++){
 				fire(2);
-				}
 			}
+		}
 		
-			if (e.isMyFault()) {
-				turnRight(10);
-			}
+		if (e.isMyFault()) {
+			turnRight(10);
+		}
 	}
 		
 	public void onBulletHitBullet(BulletHitBulletEvent event){
